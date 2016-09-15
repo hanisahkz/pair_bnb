@@ -15,18 +15,27 @@
 
   <div id="flash">
     <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
+      <div id="flash"><%= key %> : <%=value %></div>
     <% end %>
   </div>
 
+
+
+
+
+
+
 <div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
+  <% if signed_out? %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% else %>
+    <%=current_user.first_name%>
+
   <% end %>
 </div>
+
+ 
+
 
   <%= yield %>
 </body>
