@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'pusher'
 gem 'omniauth-facebook'
 gem 'omniauth'
