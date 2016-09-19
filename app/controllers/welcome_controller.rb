@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   before_action :authenticate_user, only: [:home]
   
   def home
+    @user = current_user
   end
 
   def authenticate_user
