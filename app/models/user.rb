@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include Clearance::User
   include UsersHelper
 
+  has_many :listings, :dependent => :destroy
   has_many :authentications, :dependent => :destroy
 
 

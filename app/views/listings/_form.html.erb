@@ -1,0 +1,36 @@
+<%= form_for :listing, url: listings_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :price_per_night %><br>
+    <%= f.number_field(:price_per_night, in: 1.0..5000.0, step: 0.5)%>
+  </p>
+
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
+  </p>
+
+  <p>
+    <%= f.label :room_type %><br>
+    <%= f.text_area :room_type %>
+  </p>
+
+  <p>
+    <%= f.label :guest_capacity %><br>
+    <%= f.number_field(:guest_capacity, in: 1..16) %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
