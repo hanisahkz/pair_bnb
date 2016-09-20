@@ -11,15 +11,13 @@
 
 
 <body>
+<% if signed_in? %>
+  <%= render partial: '/layouts/signin_navbar' %>
+<% else %>
+  <%= render partial: '/layouts/navbar' %>
+<% end %>
 
-<nav class="menu">
-  <ul class="active">
-    <li class="current-item"><%= link_to "Home", root_url %></li>
-    <li><%= link_to "Login", "#" %></li>
-    <li><%= link_to "Signup", "#" %></li>
-    <li class="about"><%= link_to "About Us", "#" %></li>
-  </ul>
-</nav>
+
 
 
   <div id="header">
@@ -27,7 +25,7 @@
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
 
     <% else -%>
-      <%= link_to t(".sign_in"), sign_in_path %>
+      <div class="btn-primary"> <%= link_to t(".sign_in"), sign_in_path %></div>
     <% end -%>
   </div>
 
@@ -37,9 +35,6 @@
     <% end %>
   </div>
 
-
-
-
 <div id="user-widget">
   <% if signed_out? %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
@@ -48,9 +43,6 @@
 
   <% end %>
 </div>
-
- 
-
 
   <%= yield %>
 </body>
