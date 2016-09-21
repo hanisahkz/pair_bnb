@@ -1,0 +1,36 @@
+<h1>Reservation:</h1>
+
+<p>
+  <strong>Check in date:</strong>
+    <%= @reservation.check_in %>
+</p>
+
+<p>
+  <strong>Check out date:</strong>
+    <%= @reservation.check_out %>
+</p>
+
+<p>
+  <strong>Guest:</strong>
+    <%= @reservation.guest %>
+</p>
+
+<p>
+  <strong>Room type:</strong>
+    <%= @reservation.room_type %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+    $<%= @reservation.listing.price_per_night %> x <%= (@reservation.check_out - @reservation.check_in).to_i %>night(s) = <%= ((@reservation.check_out - @reservation.check_in).to_i)*@reservation.listing.price_per_night %>
+</p>
+
+<p>
+  <strong>Reserved by:</strong>
+    <%= @reservation.user.first_name %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+    <%= @reservation.listing.user.first_name %>
+</p>
