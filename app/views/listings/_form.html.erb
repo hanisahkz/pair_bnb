@@ -1,4 +1,6 @@
-<%= form_for :listing, url: listings_path do |f| %>
+ <%= form_for @listing do |f| %>
+
+
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -33,4 +35,4 @@
     <%= f.submit %>
   </p>
 
-<% end %>
+<%end%>
