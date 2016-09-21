@@ -25,7 +25,9 @@ class ListingsController < ApplicationController
   end 
 
   def show
+    # byebug
     @listing = Listing.find(params[:id])
+    @reservation = @listing.reservations.build
   end
 
   def new

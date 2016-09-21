@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id_id: 
+  listing_id_id: 
+  check_in: 2016-09-21
+  check_out: 2016-09-21
+  guest: 1
+  room_type: MyString
+
+two:
+  user_id_id: 
+  listing_id_id: 
+  check_in: 2016-09-21
+  check_out: 2016-09-21
+  guest: 1
+  room_type: MyString

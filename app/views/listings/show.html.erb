@@ -30,6 +30,19 @@
     <% end %>
 </p>
 
+<div class="container">
+
+  <%= form_for @reservation do |form| %>
+    <%= render partial: '/reservations/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+
+</div>
+
 <%= link_to "Edit", edit_listing_path(@listing)%>
 <%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: 'Are you sure?'} %>
 <%= link_to "Back", listings_path%>

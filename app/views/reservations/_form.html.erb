@@ -1,0 +1,21 @@
+<div class="text-field">
+  <%= form.label :check_in %>
+  <%= form.date_select :check_in, type: 'date', min: Date.today %>
+</div>
+
+<div class="text-field">
+  <%= form.label :check_out %>
+  <%= form.date_select :check_out, type: 'date', min: Date.today %>
+</div>
+
+<div class="text-field">
+    <%= form.label :guest %><br>
+    <%= form.number_field(:guest, in: 1..16) %>
+</div>
+
+<div class="text-field">
+    <%= form.label :room_type %><br>
+    <%= form.text_field :room_type %>
+</div>
+
+    <%= form.hidden_field :listing_id, value: @listing.id %>
