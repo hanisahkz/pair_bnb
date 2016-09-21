@@ -23,6 +23,13 @@
     <%= @listing.guest_capacity %>
 </p>
 
+<p>
+  <strong>Photos:</strong>
+    <% @listing.photos.each do |photo| %>
+    <%= image_tag (photo.url) %>
+    <% end %>
+</p>
+
 <%= link_to "Edit", edit_listing_path(@listing)%>
 <%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: 'Are you sure?'} %>
 <%= link_to "Back", listings_path%>

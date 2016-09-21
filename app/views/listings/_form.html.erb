@@ -1,5 +1,9 @@
  <%= form_for @listing do |f| %>
 
+  <p>
+    <%= f.label :photos %><br>
+    <%= f.file_field :photos, multiple: true %>
+  </p>
 
   <p>
     <%= f.label :title %><br>
