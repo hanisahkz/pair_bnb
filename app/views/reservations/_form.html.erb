@@ -1,12 +1,10 @@
-<div class="text-field">
-  <%= form.label :check_in %>
-  <%= form.date_select :check_in, type: 'date', min: Date.today %>
-</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('input[class="daterange"]').daterangepicker();
+});
+</script>
 
-<div class="text-field">
-  <%= form.label :check_out %>
-  <%= form.date_select :check_out, type: 'date', min: Date.today %>
-</div>
+<input type="text" class="daterange" name="daterange"/>
 
 <div class="text-field">
     <%= form.label :guest %><br>
@@ -19,3 +17,6 @@
 </div>
 
     <%= form.hidden_field :listing_id, value: @listing.id %>
+
+
+
