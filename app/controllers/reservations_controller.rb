@@ -11,13 +11,16 @@ class ReservationsController < ApplicationController
     @reservation.check_out = DateTime.strptime(params[:daterange].split[-1], "%m/%d/%Y")
     
     respond_to do |format|
-      if @reservation.save
+      
+        if @reservation.save
         #byebug
-        ReservationMailer.booking_email(@reservation.user, @reservation.listing.user, @reservation.id).deliver_now
+        ReservationMailer.booking_email(@reservation.user.id, @reservation.listing.user.id, @reservation.id).deliver_later 
+         #bundle exec sidekiq -q mailers
         format.html { redirect_to @reservation, notice: "Booking successfully created"}
       else
         format.html { render action: 'new' }
       end
+    
     end
   end
 
