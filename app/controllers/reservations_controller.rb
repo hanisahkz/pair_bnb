@@ -9,8 +9,16 @@ class ReservationsController < ApplicationController
     # @reservation.listing_id = @listing.id
     @reservation.check_in = DateTime.strptime(params[:daterange].split[0], "%m/%d/%Y")
     @reservation.check_out = DateTime.strptime(params[:daterange].split[-1], "%m/%d/%Y")
-    @reservation.save
-    redirect_to @reservation
+    
+    respond_to do |format|
+      if @reservation.save
+        #byebug
+        ReservationMailer.booking_email(@reservation.user, @reservation.listing.user, @reservation.id).deliver_now
+        format.html { redirect_to @reservation, notice: "Booking successfully created"}
+      else
+        format.html { render action: 'new' }
+      end
+    end
   end
 
   def show
