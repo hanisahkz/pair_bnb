@@ -200,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   bootstrap-daterangepicker-rails
   bootstrap-sass (~> 3.3.6)
   byebug
