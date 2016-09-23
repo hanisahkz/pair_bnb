@@ -18,20 +18,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*
+ * Base structure
+ */
+
+html,
 body {
-  padding: 0;
-  margin: 10px;
-  background: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.3), 
-      rgba(0, 0, 0, 0.3)
-    ),
-  asset_url("sample_cover.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  background-size: cover;
-  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
 
@@ -71,8 +70,8 @@ body {
 
 
 .container {
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
 }
 
 /*----- Para -----*/
@@ -194,6 +193,22 @@ body {
     display: none;
   }
 }
+
+
+/*----- Listing Index Page -----*/
+
+
+body .index{
+  background-color: #eee;
+}
+
+
+
+/*----- Signup -----*/
+
+
+
+
 
 
 
