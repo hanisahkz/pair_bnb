@@ -18,39 +18,27 @@
 
 
 <body>
-<% if signed_in? %>
-  <%= render partial: '/layouts/signin_navbar' %>
-<% else %>
-  <%= render partial: '/layouts/navbar' %>
-<% end %>
+
+  <% if signed_in? %>
+    <%= render partial: '/layouts/signin_navbar' %>
+  <% else %>
+    <%= render partial: '/layouts/navbar' %>
+  <% end %>
 
 
+  <div id="user-widget">
+    <% if signed_out? %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% else %>
+      <p>Welcome back, <%=current_user.first_name%>.</p> 
 
-
-  <div id="header">
-    <% if signed_in? -%>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-
-    <% else -%>
-      <div class="btn-primary"> <%= link_to t(".sign_in"), sign_in_path %></div>
-    <% end -%>
-  </div>
-
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash"><%= key %> : <%=value %></div>
     <% end %>
   </div>
 
-<div id="user-widget">
-  <% if signed_out? %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% else %>
-    <p>Welcome back, <%=current_user.first_name%>.</p> 
+    <%= yield %>
 
-  <% end %>
-</div>
+  </div>  <!-- close container -->
 
-  <%= yield %>
 </body>
+
 </html>
