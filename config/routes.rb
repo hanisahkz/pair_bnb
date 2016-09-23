@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+
+  resources :transactions, only: [:create, :new]
+
   get 'welcome/home'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]

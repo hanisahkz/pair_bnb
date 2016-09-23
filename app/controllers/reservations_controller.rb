@@ -10,11 +10,11 @@ class ReservationsController < ApplicationController
     @reservation.check_in = DateTime.strptime(params[:daterange].split[0], "%m/%d/%Y")
     @reservation.check_out = DateTime.strptime(params[:daterange].split[-1], "%m/%d/%Y")
     
+    @reservation.save
     respond_to do |format|
-      
-        if @reservation.save
+              if
         #byebug
-        ReservationMailer.booking_email(@reservation.user.id, @reservation.listing.user.id, @reservation.id).deliver_later 
+        # ReservationMailer.booking_email(@reservation.user.id, @reservation.listing.user.id, @reservation.id).deliver_now 
          #bundle exec sidekiq -q mailers
         format.html { redirect_to @reservation, notice: "Booking successfully created"}
       else
@@ -26,6 +26,13 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+
+    # byebug
+    @total_nights = Reservation.total_nights(@reservation.check_in, @reservation.check_out)
+    @total_price = Reservation.total_price(@total_nights, @reservation.listing.price_per_night)
+
+    # render '/transactions/new'
+
   end
 
   private
