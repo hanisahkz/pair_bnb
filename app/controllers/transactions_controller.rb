@@ -2,9 +2,11 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user #, [:new, :create]
 
   def new
-   @total_price = params[:total_price]
+    gon.client_token = generate_client_token
+    @reservation = current_user.reservations.last
+    @total_nights = Reservation.total_nights(@reservation.check_in, @reservation.check_out)
+    @total_price = Reservation.total_price(@total_nights, @reservation.listing.price_per_night)
    # @reservation = Reservation.find(params[:id])
-   gon.client_token = generate_client_token
    # byebug
   end 
 
@@ -12,7 +14,6 @@ class TransactionsController < ApplicationController
      # gon.client_token = generate_client_token
      # byebug
      @reservation = current_user.reservations.last
-
      @total_nights = Reservation.total_nights(@reservation.check_in, @reservation.check_out)
      # byebug
      @result = Braintree::Transaction.sale(
@@ -25,7 +26,7 @@ class TransactionsController < ApplicationController
         @reservation.update(payment: true)
         
          #byebug
-        ReservationMailer.booking_email(@reservation.user.id, @reservation.listing.user.id, @reservation.id).deliver_now 
+        ReservationMailer.booking_email(@reservation.user.id, @reservation.listing.user.id, @reservation.id).deliver_later 
            #bundle exec sidekiq -q mailers
         format.html { redirect_to root_url, notice: "Congratulations! Your transaction has been successfully!"}
      else

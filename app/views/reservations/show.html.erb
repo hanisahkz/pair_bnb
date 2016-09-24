@@ -38,11 +38,7 @@
 
 
 
-<%= form_tag transactions_path do %>
-  <%= hidden_field_tag(:total_price, @total_price) %>
-  <%= submit_tag "Pay $ #{@total_price}" , class: "button mt1" %>
-<% end %>
-
+<%=link_to "Pay now", new_transaction_path, class: "button", data: { turbolinks: false } %>
 
 
 

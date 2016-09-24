@@ -1,5 +1,4 @@
 
-
 <div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
   <h2 class="mbs">New Transaction</h2>
   <%= form_tag transactions_path do%>
@@ -15,11 +14,3 @@
 
 
 
-<%= form_for @reservation do |form| %>
-
- <%= form.hidden_field :total_price, value: @total_price %>
-
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
-<% end %>
