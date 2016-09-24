@@ -30,13 +30,19 @@
     <% end %>
 </p>
 
+
+<p>
+  <strong>Host:</strong>
+    <%= @listing.user.first_name %>
+</p>
+
 <div class="container">
 
   <%= form_for @reservation do |form| %>
     <%= render partial: '/reservations/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit "Pay now" %>
     </div>
 
   <% end %>

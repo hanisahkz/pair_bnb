@@ -17,12 +17,13 @@
 
 <p>
   <strong>Room type:</strong>
-    <%= @reservation.room_type %>
+    <%= @reservation.listing.room_type %>
 </p>
 
 <p>
   <strong>Total price:</strong>
-    $<%= @reservation.listing.price_per_night %> x <%= (@reservation.check_out - @reservation.check_in).to_i %>night(s) = <%= ((@reservation.check_out - @reservation.check_in).to_i)*@reservation.listing.price_per_night %>
+    $<%= @reservation.listing.price_per_night %> x <%= pluralize(@total_nights, 'night') %> = $ 
+    <%= @total_price %>
 </p>
 
 <p>
@@ -34,3 +35,27 @@
   <strong>Host:</strong>
     <%= @reservation.listing.user.first_name %>
 </p>
+
+
+
+<%= form_tag transactions_path do %>
+  <%= hidden_field_tag(:total_price, @total_price) %>
+  <%= submit_tag "Pay $ #{@total_price}" , class: "button mt1" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
