@@ -12,7 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree
 //= require moment
+
+
+$(function() {
+  $("#slider").slider({
+    range:true,
+    min: 10,
+    max: 5000,
+    values: [10, 5000],
+    slide: function(event, ui) {
+      $("#price").val("$" + ui.values[0] + " - $" + ui.values[1]);
+    },
+    change: function(event, ui) {
+      $("#min").attr('value', $("#slider").slider("values", 0));
+      $("#max").attr('value', $("#slider").slider("values", 1)); 
+    }
+  });
+  $("#price").val("$" + $("#slider").slider("values", 0) + " - $"
+    + $("#slider").slider("values", 1));
+});

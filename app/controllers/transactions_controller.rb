@@ -15,9 +15,10 @@ class TransactionsController < ApplicationController
      # byebug
      @reservation = current_user.reservations.last
      @total_nights = Reservation.total_nights(@reservation.check_in, @reservation.check_out)
+     @total_price = Reservation.total_price(@total_nights, @reservation.listing.price_per_night)
      # byebug
      @result = Braintree::Transaction.sale(
-              amount: Reservation.total_price(@total_nights, @reservation.listing.price_per_night),
+              amount: @total_price,
               payment_method_nonce: params[:payment_method_nonce])
     
     respond_to do |format|

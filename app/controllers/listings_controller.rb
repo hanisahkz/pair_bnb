@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
   def index
     @listings = Listing.where(nil)
+    @listings = @listings.price_per_night(params["min"], params["max"]) if (params["min"] || params["max"]).present? 
+    # byebug
   end
 
   def edit

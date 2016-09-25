@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  *= require daterangepicker-bs3
  */
 
@@ -207,6 +208,12 @@ body .index{
 /*----- Signup -----*/
 
 
+
+/*----- jquery ui slider -----*/
+
+#slider .ui-slider-range { 
+background: #5bc0de;
+ }
 
 
 
