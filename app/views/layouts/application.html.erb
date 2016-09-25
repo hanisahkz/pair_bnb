@@ -25,20 +25,15 @@
 
 <body>
 
-
-
   <% if signed_in? %>
     <%= render partial: '/layouts/signin_navbar' %>
   <% else %>
     <%= render partial: '/layouts/navbar' %>
   <% end %>
 
-
   <div id="user-widget">
     <% if signed_out? %>
       <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <% else %>
-      <p>Welcome back, <%=current_user.first_name%>.</p> 
     <% end %>
   </div>
 
@@ -47,6 +42,13 @@
   <% end %>
 
     <%= yield %>
+
+  <footer class="section-dark section-md">
+    <div class="container">
+      Copyright &copy; PairBnb 2016. All rights reserved.
+    </div>
+  </footer>
+
 </body>
 
 </html>
