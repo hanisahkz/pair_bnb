@@ -22,12 +22,8 @@
  * Base structure
  */
 
-html,
 body {
-  height: 100%;
   background-color: #333;
-}
-body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
@@ -204,12 +200,88 @@ body .index{
 
 
 
-/*----- Signup -----*/
+/*----- Signup, SiginA place to find your next home -----*/
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section{
+  margin: 0;
+  padding: 0;
+}
+
+section.camera{
+  color: #FFF;
+  background-position: 50% 50% !important;
+  background-size: cover !important;
+  width: 100%;
+
+  /*background: image-url('travel.jpg');*/
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('travel.jpg');
+}
+
+/*begin section sizing*/
+.section-fullscreen{
+  min-height: 100vh;
+}
+
+.section-md{
+  padding: 40px 0;
+}
+/*End section sizing*/
+
+/*Vertical alignment using flexbox*/
+.flex-vertical-center{
+  display: flex;  /*//enable flexbox*/
+  align-items: center; /*//this center content vertically*/
+  justify-content: center;  /*//this centers content horizontally*/
+}
+
+footer{
+  color: #828282;
+}
 
 
+.btnsize{
+  width: 300px;
+}
 
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
 
-
-
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
 
