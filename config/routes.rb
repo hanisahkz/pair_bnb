@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :transactions, only: [:create, :new]
 
-  get 'welcome/home'
+  # get 'welcome/home'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
