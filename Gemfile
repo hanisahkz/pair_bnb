@@ -63,3 +63,8 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
+gem 'searchkick'
