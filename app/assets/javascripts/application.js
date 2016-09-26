@@ -19,7 +19,8 @@
 //= require moment
 
 
-$(function() {
+$(document).ready(function() {
+  $('input[class="daterange"]').daterangepicker();
   $("#slider").slider({
     range:true,
     min: 10,
