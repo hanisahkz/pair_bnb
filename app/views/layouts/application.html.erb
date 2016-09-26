@@ -16,15 +16,18 @@
   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
+
+  <!-- price range -->
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
    
   <!-- Include Date Range Picker -->
   <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 </head>
 
-
 <body>
-
   <% if signed_in? %>
     <%= render partial: '/layouts/signin_navbar' %>
   <% else %>
@@ -41,14 +44,13 @@
     <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
 
-    <%= yield %>
+  <%= yield %>
 
   <footer class="section-dark section-md">
     <div class="container">
       Copyright &copy; PairBnb 2016. All rights reserved.
     </div>
   </footer>
-
 </body>
 
 </html>

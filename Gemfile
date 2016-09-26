@@ -29,6 +29,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # fix turbolink issues
 # gem 'jquery-turbolinks'
 gem 'momentjs-rails'

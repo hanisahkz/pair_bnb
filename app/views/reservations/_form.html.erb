@@ -1,20 +1,13 @@
-<script type="text/javascript">
-$(document).ready(function() {
-  $('input[class="daterange"]').daterangepicker();
-});
-</script>
-
 <input type="text" class="daterange" name="daterange"/>
-
 <div class="text-field">
-    <%= form.label :guest %><br>
-    <%= form.number_field(:guest, in: 1..16) %>
+  <%= form.label :guest %><br>
+  <%= form.number_field(:guest, in: 1..16) %>
+  <%= form.hidden_field :listing_id, value: @listing.id %>
 </div>
 
 
 
 
-    <%= form.hidden_field :listing_id, value: @listing.id %>
 
 
 

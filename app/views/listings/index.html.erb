@@ -1,12 +1,30 @@
 <div class="index">
-  <div class="container">  
+  <div class="container">
+
+
+
+    <div id="slider"></div></br>
+
+  <p>
+    <label for="price">Price range:</label>
+    <input type="text" id="price" style="border:0; color:#b9cd6d; font-weight:bold;">
+  </p>
+
+
+
+ <%= form_tag '', :method => :get, :id => :price_range do %>
+  <%= hidden_field_tag :min %>
+  <%= hidden_field_tag :max %>
+  <%= submit_tag 'Filter' %>
+  <% end %> 
+
+
 
 <h1>Property Listings</h1>
 
-<button type="button" class="btn btn-default btn-xs btn btn-outline-success"> 
-  <%= link_to "Add a new property", new_listing_path %>
-</button>
-
+<div type="button" class="btn btn-default btn-xs btn btn-outline-success"> 
+    <%= link_to "Add a new property", new_listing_path %>
+</div>
 
 <div class="table-responsive">
   <table class="table table-striped">
@@ -41,7 +59,7 @@
 
 
       <td>
-          <%= link_to "Show", listing_path(listing)%>
+          <%= link_to "Show", listing_path(listing), data: { turbolinks: false }%>
       </td>
      
       <td>
@@ -60,3 +78,5 @@
 
   </div>
 </div>
+
+

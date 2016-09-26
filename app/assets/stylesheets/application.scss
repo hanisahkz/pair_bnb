@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  *= require daterangepicker-bs3
  */
 
@@ -243,6 +244,12 @@ section.camera{
 footer{
   color: #828282;
 }
+
+/*----- jquery ui slider -----*/
+
+#slider .ui-slider-range { 
+background: #5bc0de;
+ }
 
 
 .btnsize{
