@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    @listings = Listing.where(nil)
   end
 
   def edit
