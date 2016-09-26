@@ -7,6 +7,10 @@
       <%= render partial: '/sessions/form' %>
     </div>
 
+    <% if signed_out? %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+
   </div>
 </section>
 
