@@ -1,24 +1,22 @@
 <div class="text-field">
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name, type: 'text' %>
+  <%= form.text_field :first_name, type: 'text', placeholder: "First Name", class: "form-control" %>
 </div>
 
 <div class="text-field">
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name, type: 'text' %>
+  <%= form.text_field :last_name, type: 'text', placeholder: "Last Name", class: "form-control" %>
 </div>
 
 <div class="text-field">
-  <%= form.label :birthday %>
-  <%= form.date_select :birthday, type: 'date', start_year: 1900 %>
-</div>
-
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
+  <%= form.text_field :email, type: 'email', placeholder: "johndoe@domain.com", class: "form-control" %>
 </div>
 
 <div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= form.password_field :password, placeholder: "Password", class: "form-control" %>
 </div>
+
+<br>
+<div class="text-field" style="color: #000;">
+  <%= form.label :birthday %>
+  <%= form.date_select :birthday, type: 'date', start_year: 1900, class: "form-control" %>
+</div>
+<br>
