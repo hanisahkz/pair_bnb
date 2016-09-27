@@ -25,12 +25,20 @@
 
 body {
   background-color: #333;
-  color: #fff;
+  color: #000;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  /*padding-top: 70px;*/
 }
 
+.birthfont{
+  color: #000;
+}
 
+/*Navbar*/
+/*.navbar-fixed-top{
+  border-width: 0 0 0px;
+}*/
 
 .hero-header {
   text-align: center;
@@ -196,12 +204,13 @@ body {
 
 
 body .index{
-  background-color: #eee;
+  background-color: #fff;
+  padding-top: 20px;
 }
 
 
 
-/*----- Signup, SiginA place to find your next home -----*/
+/*----- Signup, Sigin,A place to find your next home -----*/
 
 .container{
   max-width: 1200px;
@@ -221,16 +230,17 @@ section.camera{
   width: 100%;
 
   /*background: image-url('travel.jpg');*/
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('travel.jpg');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), image-url('download.jpg');
 }
 
 /*begin section sizing*/
 .section-fullscreen{
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
+/*Copyright padding*/
 .section-md{
-  padding: 40px 0;
+  padding: 20px 0; 
 }
 /*End section sizing*/
 
@@ -291,4 +301,8 @@ background: #5bc0de;
   border-top-right-radius: 0;
 }
 
-
+.form-control{
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
