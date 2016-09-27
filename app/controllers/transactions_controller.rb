@@ -27,7 +27,7 @@ class TransactionsController < ApplicationController
         @reservation.update(payment: true)
         
          #byebug
-        ReservationMailer.booking_email(@reservation.user.id, @reservation.listing.user.id, @reservation.id).deliver_later 
+        ReservationMailer.booking_email(@reservation.user.id, @reservation.listing.user.id, @reservation.id).deliver_now 
            #bundle exec sidekiq -q mailers
         format.html { redirect_to root_url, notice: "Congratulations! Your transaction has been successfully!"}
      else
