@@ -31,7 +31,12 @@
 
   <p>
     <%= f.label :room_type %><br>
-    <%= f.text_area :room_type %>
+    <%= f.radio_button :room_type, "Entire Home" %>
+    <%= label :room_type_entire_home, "Entire Home" %>&nbsp;&nbsp
+    <%= f.radio_button :room_type, "Private Room" %>
+    <%= label :room_type_private_room, "Private Room" %>&nbsp;&nbsp
+    <%= f.radio_button :room_type, "Shared Room" %>
+    <%= label :room_type_shared_room, "Shared Room" %>
   </p>
 
   <p>
