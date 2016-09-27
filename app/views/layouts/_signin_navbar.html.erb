@@ -1,6 +1,7 @@
 
 <!-- <nav class="navbar navbar-default navbar-static-top" style="background-color: #ccc;"> -->
   <div class="container-fluid" style="background-color: transparent;">
+<!-- <nav class="navbar navbar-light" style="background-color: #ccc;"> -->
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -12,7 +13,7 @@
       <a class="navbar-brand" href="/"> PairBnb </a>
     </div>
 
-    <%= form_tag search_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
+    <%= form_tag listings_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
       <p>
         <%= text_field_tag :q, params[:q], class: "form-control" %>
         <%= submit_tag "Where to?", name: nil, class: "btn btn-default" %>
