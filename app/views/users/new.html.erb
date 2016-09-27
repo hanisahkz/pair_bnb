@@ -15,6 +15,13 @@
           <%= link_to t(".sign_in"), sign_in_path %>
         </div>
       <% end %>
+
+    <% if signed_out? %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+
+
+
     </div>
 
   </div>

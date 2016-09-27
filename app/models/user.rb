@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :reservations, :dependent => :destroy
   has_many :authentications, :dependent => :destroy
 
-
+  mount_uploader :photo, PhotoUploader
 
   def self.create_with_auth_and_hash(authentication,auth_hash)
   

@@ -34,17 +34,18 @@
     <%= render partial: '/layouts/navbar' %>
   <% end %>
 
-  <div id="user-widget">
-    <% if signed_out? %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <% end %>
-  </div>
-
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
 
+
   <%= yield %>
+
+
+  
+
+
+
 
   <footer class="section-dark section-md">
     <div class="container">
