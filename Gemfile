@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 gem 'sidekiq'
 gem 'actionmailer'
