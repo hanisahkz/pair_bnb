@@ -2,6 +2,13 @@
 
 class Listing < ActiveRecord::Base
   
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :price_per_night, presence: true
+  validates :location, presence: true
+  validates :room_type, presence: true
+  validates :guest_capacity, presence: true
+
   # include Elasticsearch::Model
   # include Elasticsearch::Model::Callbacks
   searchkick
