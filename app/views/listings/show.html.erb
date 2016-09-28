@@ -1,3 +1,6 @@
+<div class="#" style="background: #f6f6f6;">
+  <div class="space">
+
 <p>
   <strong>Title:</strong>
     <%= @listing.title %>
@@ -30,12 +33,19 @@
 </p>
 
 <p>
-  <strong>Photos:</strong>
-    <% @listing.photos.each do |photo| %>
-    <%= image_tag (photo.url) %>
-    <% end %>
+  <strong>Photos:</strong><br>
+  <div class="row">  
+     <div class="col-md-6 col-md-offset-3" > 
+         
+        <% @listing.photos.each do |photo| %>
+        
+        <%= image_tag (photo.list.url), class: "img-thumbnail" %>
+        
+        <% end %>
+        
+      </div>
+    </div>
 </p>
-
 
 <p>
   <strong>Host:</strong>
@@ -43,18 +53,20 @@
 </p>
 
 <div class="container">
-
   <%= form_for @reservation do |form| %>
     <%= render partial: '/reservations/form', object: form %>
-
+    <br>
     <div class="submit-field">
-      <%= form.submit "Instant book" %>
+      <%= form.submit "Instant book", class: "btn btn-warning" %>
     </div>
-
   <% end %>
-
 </div>
 
+<br>
 <%= link_to "Edit", edit_listing_path(@listing)%>
 <%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: 'Are you sure?'} %>
 <%= link_to "Back", listings_path%>
+
+</div>
+</div>
+

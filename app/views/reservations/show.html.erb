@@ -1,46 +1,50 @@
-<h1>Reservation:</h1>
+<div class="#" style="background: #f6f6f6;">
+  <div class="space">
 
-<p>
-  <strong>Check in date:</strong>
-    <%= @reservation.check_in %>
-</p>
+    <h1>Reservation:</h1>
 
-<p>
-  <strong>Check out date:</strong>
-    <%= @reservation.check_out %>
-</p>
+    <p>
+      <strong>Check in date:</strong>
+        <%= @reservation.check_in %>
+    </p>
 
-<p>
-  <strong>Guest:</strong>
-    <%= @reservation.guest %>
-</p>
+    <p>
+      <strong>Check out date:</strong>
+        <%= @reservation.check_out %>
+    </p>
 
-<p>
-  <strong>Room type:</strong>
-    <%= @reservation.listing.room_type %>
-</p>
+    <p>
+      <strong>Guest:</strong>
+        <%= @reservation.guest %>
+    </p>
 
-<p>
-  <strong>Total price:</strong>
-    $<%= @reservation.listing.price_per_night %> x <%= pluralize(@total_nights, 'night') %> = $ 
-    <%= @total_price %>
-</p>
+    <p>
+      <strong>Room type:</strong>
+        <%= @reservation.listing.room_type %>
+    </p>
 
-<p>
-  <strong>Reserved by:</strong>
-    <%= @reservation.user.first_name %>
-</p>
+    <p>
+      <strong>Total price:</strong>
+        $<%= @reservation.listing.price_per_night %> x <%= pluralize(@total_nights, 'night') %> = $ 
+        <%= @total_price %>
+    </p>
 
-<p>
-  <strong>Host:</strong>
-    <%= @reservation.listing.user.first_name %>
-</p>
+    <p>
+      <strong>Reserved by:</strong>
+        <%= @reservation.user.first_name %>
+    </p>
 
-
-
-<%=link_to "Pay now", new_transaction_path, class: "button", data: { turbolinks: false } %>
+    <p>
+      <strong>Host:</strong>
+        <%= @reservation.listing.user.first_name %>
+    </p>
 
 
+
+    <%=link_to "Pay now", new_transaction_path, class: "button", data: { turbolinks: false } %>
+
+  </div>
+</div>
 
 
 

@@ -1,12 +1,17 @@
+<div class="#" style="background: #f6f6f6;">
+  <div class="space">
+<div class="container">
+  <div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+    <h2 class="mbs">New Transaction</h2>
+    <%= form_tag transactions_path do%>
+      <p>Please enter your payment details:</p>
+      <div id="dropin"></div>
 
-<div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
-  <h2 class="mbs">New Transaction</h2>
-  <%= form_tag transactions_path do%>
-    <p>Please enter your payment details:</p>
-    <div id="dropin"></div>
-
-    <%=submit_tag "Pay now: $#{@total_price}", class: "button mt1" %>
-  <%end%>
+      <%=submit_tag "Pay now: $#{@total_price}", class: "btn btn-warning" %>
+    <%end%>
+    </div>
+    </div>
+  </div>
 </div>
 
 
