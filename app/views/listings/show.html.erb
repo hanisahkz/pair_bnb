@@ -1,3 +1,4 @@
+
 <div class="#" style="background: #f6f6f6;">
   <div class="space">
 
@@ -34,17 +35,45 @@
 
 <p>
   <strong>Photos:</strong><br>
-  <div class="row">  
-     <div class="col-md-6 col-md-offset-3" > 
-         
-        <% @listing.photos.each do |photo| %>
-        
-        <%= image_tag (photo.list.url), class: "img-thumbnail" %>
-        
+  <div class="container">
+<% if @listing.photos.any? %>
+  <div class="carousel slide" id="screenshot-carousel" data-rise="carousel" style="background: #fff;"><!-- Variable Carousel -->
+    <ol class="carousel-indicators">
+      <% @listing.photos.each_with_index do |picture, index| %>
+        <% if index == 0 %>
+          <li data-target="screenshot-carousel" data-slide-to="#{index}" class="active"></li>            
+        <% else %>
+          <li data-target="screenshot-carousel" data-slide-to="#{index}"></li>
         <% end %>
-        
-      </div>
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+      <% @listing.photos.each_with_index do |picture, index| %>
+
+        <% if index == 0 %>
+          <div class="item active">
+            <%= image_tag picture.url(:list).to_s, class: "img-thumbnail center-block" %>
+          </div>
+        <% else %>
+          <div class="item">
+            <%= image_tag picture.url(:list).to_s, class: "img-thumbnail center-block" %>
+          </div>
+        <% end %> 
+
+      <% end %>
     </div>
+    <a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div><!-- End Variable Carousel -->
+<% else %>
+  <p>No picture uploaded yet</p>
+<% end %>
+
+</div>
 </p>
 
 <p>
@@ -69,4 +98,12 @@
 
 </div>
 </div>
+
+
+
+
+
+
+
+
 
