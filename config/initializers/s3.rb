@@ -5,5 +5,5 @@ CarrierWave.configure do |config|
     :aws_secret_access_key => ENV["AMAZON_SECRET_KEY"],
     :region => 'ap-southeast-1'
   }
-  config.fog_directory  = "bnbrails"
+  config.fog_directory  = "bnbheroku"
 end
